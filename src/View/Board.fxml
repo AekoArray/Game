@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="465.0" maxWidth="415.0" minHeight="415.0" minWidth="415.0" prefHeight="465.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BoardController">
+    <children>
+        <Pane fx:id="boardPane" layoutX="-2.0" maxHeight="415.0" maxWidth="415.0" minHeight="415.0" minWidth="415.0" prefHeight="415.0" prefWidth="415.0" />
+      <Pane fx:id="menuPane" layoutY="415.0" prefHeight="50.0" prefWidth="415.0">
+         <children>
+            <Circle fill="#ff1f1f" layoutX="17.0" layoutY="12.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="DODGERBLUE" layoutX="17.0" layoutY="36.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Text fx:id="playerOne" layoutX="33.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1:" />
+            <Text fx:id="PlayerTwo" layoutX="33.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2:" />
+            <Text fx:id="playerOnePoints" layoutX="81.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Points" />
+            <Text fx:id="playerTwoPoints" layoutX="81.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Points" />
+            <ImageView fx:id="test" fitHeight="50.0" fitWidth="238.0" layoutX="154.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@title.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="winMessage" disable="true" layoutX="224.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
