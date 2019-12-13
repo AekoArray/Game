@@ -5,7 +5,7 @@ import Model.GameObjects.Line;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestBox {
+public class BoxTest {
     @Test
     public void shouldNotBeFilledBox(){
         Line line1 = new Line();

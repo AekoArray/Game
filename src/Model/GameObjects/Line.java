@@ -1,5 +1,7 @@
 package Model.GameObjects;
 
+import Model.Shapes.LineShape;
+
 import java.util.ArrayList;
 
 /**
@@ -7,6 +9,17 @@ import java.util.ArrayList;
  */
 public class Line implements BoardItem {
     private boolean fillStatus;
+
+    public LineShape getLineShape() {
+        return lineShape;
+    }
+
+    public void setLineShape(LineShape lineShape) {
+
+        this.lineShape = lineShape;
+    }
+
+    private LineShape lineShape;
     private ArrayList<Box> attachedBoxes = new ArrayList<>();
 
     void addAttachedBox(Box box) {
@@ -20,6 +33,8 @@ public class Line implements BoardItem {
     public boolean getFillStatus() {
         return fillStatus;
     }
+
+
 
     public void setFillStatus(boolean fill) {
         this.fillStatus = fill;

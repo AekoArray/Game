@@ -2,6 +2,8 @@ package Model;
 
 import Controller.BoardController;
 import Model.GameObjects.*;
+import javafx.scene.Cursor;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.util.List;
@@ -19,6 +21,12 @@ public class GameEngine {
     private Player computer;
     private Player currentPlayer;
     private BoardController boardController;
+
+
+    public List<List<BoardItem>> getBoardItems() {
+        return boardItems;
+    }
+
 
     void setBoardController(BoardController boardController) {
         this.boardController = boardController;
@@ -76,19 +84,11 @@ public class GameEngine {
 
         if (attachedBoxes <= 0) {
             currentPlayer = changePlayer();
-            if(currentPlayer == computer){
-                computerMove();
-            }
         } else {
             boardController.changeBoxColour(clickedLine.getAttachedBoxes(), currentPlayer);
             currentPlayer.addPoints(attachedBoxes * 10);
             boardController.changeScore(currentPlayer, playerOne, computer);
         }
-
-    }
-
-    private void computerMove() {
-
 
     }
 

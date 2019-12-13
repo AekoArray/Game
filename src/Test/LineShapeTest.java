@@ -5,7 +5,7 @@ import Model.Shapes.LineShape;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestLineShape {
+public class LineShapeTest {
     @Test
     public void LineObject_NOT_NULL(){
         Line line = new Line();

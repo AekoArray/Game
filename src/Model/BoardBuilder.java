@@ -37,7 +37,10 @@ public class BoardBuilder {
             positionY = determinateWhatPositionYShouldBe(listOfBoardItems, positionY, rowOfBoardItems);
         }
         boardController.setPanePosition(positionY);
+        computer();
     }
+
+
 
     private void createBox(Box boxObject) {
         BoxShape box = new BoxShape(boxObject);
@@ -65,33 +68,38 @@ public class BoardBuilder {
         positionX += 14;
     }
 
-    private void createLineAs(String type, Line lineObject) {
-        LineShape line = new LineShape(lineObject);
+    private void createLineAs(String type, Line line) {
+        LineShape lineShape = new LineShape(line);
+        line.setLineShape(lineShape);
 
         if (type == "horizontal") {
-            line.setHeight(15);
-            line.setWidth(75);
-            line.setLayoutX(positionX);
+            lineShape.setHeight(15);
+            lineShape.setWidth(75);
+            lineShape.setLayoutX(positionX);
             positionX += 74;
         } else if (type == "vertical") {
-            line.setHeight(75);
-            line.setWidth(15);
-            line.setLayoutX(positionX);
+            lineShape.setHeight(75);
+            lineShape.setWidth(15);
+            lineShape.setLayoutX(positionX);
             positionX += 14;
         }
 
-        line.setLayoutY(positionY);
-        line.setFill(Color.valueOf("#d0e1f2"));
-        line.setOnMouseEntered(e -> board.setOnLineEntered(line));
-        line.setOnMouseExited(e -> board.setOnLineExited(line));
-        line.setOnMouseClicked(e -> board.lineClicked(line));
-        line.setStroke(Color.BLACK);
-        line.setStrokeType(StrokeType.INSIDE);
-        board.addItemToBoard(line);
+        lineShape.setLayoutY(positionY);
+        lineShape.setFill(Color.valueOf("#d0e1f2"));
+        lineShape.setOnMouseEntered(e -> board.setOnLineEntered(lineShape));
+        lineShape.setOnMouseExited(e -> board.setOnLineExited(lineShape));
+        lineShape.setOnMouseClicked(e -> board.lineClicked(lineShape));
+        lineShape.setStroke(Color.BLACK);
+        lineShape.setStrokeType(StrokeType.INSIDE);
+        board.addItemToBoard(lineShape);
+    }
+
+    private void computer(){
+        board.computerMoveButton.setOnMouseClicked(e -> board.computerMove());
     }
 
     private float determinateWhatPositionYShouldBe(List<List<BoardItem>> listOfBoardItems, float positionY, List<BoardItem> rowOfBoardItems) {
-        if ((listOfBoardItems.indexOf(rowOfBoardItems) / 2) == 0) {
+        if ((listOfBoardItems.indexOf(rowOfBoardItems) & 1) == 0) {
             positionY += 14;
         } else {
             positionY += 74;
@@ -100,7 +108,7 @@ public class BoardBuilder {
     }
 
     private void determineWhatTypeOfLineShouldBeMade(List<List<BoardItem>> listOfBoardItems, List<BoardItem> rowOfBoardItems, Line line) {
-        if ((listOfBoardItems.indexOf(rowOfBoardItems) / 2) == 0) {
+        if ((listOfBoardItems.indexOf(rowOfBoardItems) & 1) == 0) {
             createLineAs("horizontal", line);
         } else {
             createLineAs("vertical", line);

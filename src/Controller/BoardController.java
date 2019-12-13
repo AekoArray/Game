@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.GameEngine;
+import Model.GameObjects.BoardItem;
 import Model.GameObjects.Box;
 import Model.GameObjects.Line;
 import Model.GameObjects.Player;
@@ -15,6 +16,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BoardController {
 
@@ -36,6 +38,9 @@ public class BoardController {
     @FXML
     private Text winMessage;
 
+    @FXML
+    public Text computerMoveButton;
+
     private GameEngine engine;
 
     public void setEngine(GameEngine engine) {
@@ -48,6 +53,38 @@ public class BoardController {
 
     public void setPanePosition(float positionY) {
         menuPane.setLayoutY(positionY + 10); // Make sure that the pain is located under the board items
+    }
+
+    public BoardController(){
+
+    }
+
+    public void computerMove(){
+                System.out.println("ssss");
+        for (List<BoardItem> boardItem : engine.getBoardItems()) {
+            for (BoardItem item : boardItem) {
+                if (item instanceof Line){
+                    Line line = (Line) item;
+                    if (!line.getFillStatus()){
+                        lineClicked(line.getLineShape());
+//                        int attachedBoxes = line.howManyAttachedBoxesAreFilledSinceThisTurn();
+//
+//                        if (engine.checkIfAllBoxesAreFilled()) {
+//                            engine.determineWinner();
+//                        }
+//
+//                        if (attachedBoxes <= 0) {
+//                            engine.currentPlayer = engine.changePlayer();
+//                        } else {
+//                            changeBoxColour(line.getAttachedBoxes(), engine.getCurrentPlayer());
+//                            engine.getCurrentPlayer().addPoints(attachedBoxes * 10);
+//                           changeScore(engine.getCurrentPlayer(), engine.getPlayerOne(), engine.getComputer());
+//                        }
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     public void lineClicked(LineShape clickedLineShape) { // When the line shape is clicked, this method will change the colour, cursor type and send the line to the turn method

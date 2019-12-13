@@ -19,6 +19,11 @@ public class GUIInitializer {
     private Stage primaryStage;
     private BoardController boardController;
 
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+
     public void setRows(int input) {
         engine.setRows(input);
     }
