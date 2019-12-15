@@ -1,4 +1,4 @@
-package Model.GameObjects;
+package main.java.Model.GameObjects;
 
 public class Board {
 

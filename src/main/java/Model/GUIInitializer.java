@@ -1,7 +1,7 @@
-package Model;
+package main.java.Model;
 
-import Controller.BoardController;
-import Controller.SetupController;
+import main.java.Controller.BoardController;
+import main.java.Controller.SetupController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -75,7 +75,7 @@ public class GUIInitializer {
     }
 
     private FXMLLoader instantiateFXMLLoader(String fileName) {
-        return new FXMLLoader(getClass().getResource("/View/" + fileName));
+        return new FXMLLoader(getClass().getResource("/main/java/View/" + fileName));
     }
 
     private void setSceneOnStage(Stage primaryStage, FXMLLoader loader) {

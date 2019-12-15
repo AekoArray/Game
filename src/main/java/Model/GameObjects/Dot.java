@@ -1,4 +1,4 @@
-package Model.GameObjects;
+package main.java.Model.GameObjects;
 
 /**
  * Created by Paul van der Bles on 8-8-2017.

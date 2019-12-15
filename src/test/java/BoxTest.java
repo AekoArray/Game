@@ -1,7 +1,7 @@
-package Test;
+package test.java;
 
-import Model.GameObjects.Box;
-import Model.GameObjects.Line;
+import main.java.Model.GameObjects.Box;
+import main.java.Model.GameObjects.Line;
 import org.junit.Assert;
 import org.junit.Test;
 

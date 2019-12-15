@@ -1,9 +1,7 @@
-package Model;
+package main.java.Model;
 
-import Controller.BoardController;
-import Model.GameObjects.*;
-import javafx.scene.Cursor;
-import javafx.scene.paint.Color;
+import main.java.Controller.BoardController;
+import main.java.Model.GameObjects.*;
 import javafx.stage.Stage;
 
 import java.util.List;
@@ -12,7 +10,6 @@ import java.util.List;
  * Created by Paul van der Bles on 9-8-2017.
  */
 public class GameEngine {
-
     private GUIInitializer guiInitializer;
     private Stage primaryStage;
     private Board board;
@@ -28,7 +25,7 @@ public class GameEngine {
     }
 
 
-    void setBoardController(BoardController boardController) {
+    public void setBoardController(BoardController boardController) {
         this.boardController = boardController;
     }
 
@@ -48,7 +45,7 @@ public class GameEngine {
         return board.getColumns();
     }
 
-    void setBoardItems(List boardItems) {
+    public void setBoardItems(List<List<BoardItem>> boardItems) {
         this.boardItems = boardItems;
     }
 

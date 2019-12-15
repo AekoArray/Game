@@ -1,9 +1,8 @@
-import Model.GUIInitializer;
-import Model.GameEngine;
+package main.java;
+
+import main.java.Model.GUIInitializer;
+import main.java.Model.GameEngine;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {

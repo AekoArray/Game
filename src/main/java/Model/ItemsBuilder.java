@@ -1,9 +1,9 @@
-package Model;
+package main.java.Model;
 
-import Model.GameObjects.BoardItem;
-import Model.GameObjects.Box;
-import Model.GameObjects.Dot;
-import Model.GameObjects.Line;
+import main.java.Model.GameObjects.BoardItem;
+import main.java.Model.GameObjects.Box;
+import main.java.Model.GameObjects.Dot;
+import main.java.Model.GameObjects.Line;
 
 import java.util.ArrayList;
 import java.util.List;

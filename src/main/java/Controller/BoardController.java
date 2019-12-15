@@ -1,11 +1,11 @@
-package Controller;
+package main.java.Controller;
 
-import Model.GameEngine;
-import Model.GameObjects.BoardItem;
-import Model.GameObjects.Box;
-import Model.GameObjects.Line;
-import Model.GameObjects.Player;
-import Model.Shapes.LineShape;
+import main.java.Model.GameEngine;
+import main.java.Model.GameObjects.BoardItem;
+import main.java.Model.GameObjects.Box;
+import main.java.Model.GameObjects.Line;
+import main.java.Model.GameObjects.Player;
+import main.java.Model.Shapes.LineShape;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;

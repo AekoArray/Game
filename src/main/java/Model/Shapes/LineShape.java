@@ -1,6 +1,6 @@
-package Model.Shapes;
+package main.java.Model.Shapes;
 
-import Model.GameObjects.Line;
+import main.java.Model.GameObjects.Line;
 import javafx.scene.shape.Rectangle;
 
 public class LineShape extends Rectangle{

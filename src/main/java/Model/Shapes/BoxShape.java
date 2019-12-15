@@ -1,6 +1,6 @@
-package Model.Shapes;
+package main.java.Model.Shapes;
 
-import Model.GameObjects.Box;
+import main.java.Model.GameObjects.Box;
 import javafx.scene.shape.Rectangle;
 
 public class BoxShape extends Rectangle {

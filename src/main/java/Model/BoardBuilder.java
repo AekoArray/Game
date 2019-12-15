@@ -1,12 +1,12 @@
-package Model;
+package main.java.Model;
 
-import Controller.BoardController;
-import Model.GameObjects.BoardItem;
-import Model.GameObjects.Box;
-import Model.GameObjects.Dot;
-import Model.GameObjects.Line;
-import Model.Shapes.BoxShape;
-import Model.Shapes.LineShape;
+import main.java.Controller.BoardController;
+import main.java.Model.GameObjects.BoardItem;
+import main.java.Model.GameObjects.Box;
+import main.java.Model.GameObjects.Dot;
+import main.java.Model.GameObjects.Line;
+import main.java.Model.Shapes.BoxShape;
+import main.java.Model.Shapes.LineShape;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;

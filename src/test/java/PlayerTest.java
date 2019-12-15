@@ -1,6 +1,6 @@
-package Test;
+package test.java;
 
-import Model.GameObjects.Player;
+import main.java.Model.GameObjects.Player;
 import org.junit.Assert;
 import org.junit.Test;
 

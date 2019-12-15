@@ -1,6 +1,6 @@
-package Model.GameObjects;
+package main.java.Model.GameObjects;
 
-import Model.Shapes.BoxShape; /**
+import main.java.Model.Shapes.BoxShape; /**
  * Created by Paul van der Bles on 8-8-2017.
  */
 public class Box implements BoardItem {

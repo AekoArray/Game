@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/View/title.png" alt="Logo"
+  <img src="./src/main.java.View/title.png" alt="Logo"
 </p>
 
 Dots and Boxes is a pencil-and-paper game for two players. It was first published in the 19th century by Édouard Lucas, who called it la pipopipette. It has gone by many other names, including the game of dots, boxes, dot to dot grid, and pigs in a pen.

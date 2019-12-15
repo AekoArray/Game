@@ -1,6 +1,6 @@
-package Model.GameObjects;
+package main.java.Model.GameObjects;
 
-import Model.Shapes.LineShape;
+import main.java.Model.Shapes.LineShape;
 
 import java.util.ArrayList;
 

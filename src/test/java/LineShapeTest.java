@@ -1,7 +1,7 @@
-package Test;
+package test.java;
 
-import Model.GameObjects.Line;
-import Model.Shapes.LineShape;
+import main.java.Model.GameObjects.Line;
+import main.java.Model.Shapes.LineShape;
 import org.junit.Assert;
 import org.junit.Test;
 
