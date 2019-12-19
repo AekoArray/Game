@@ -16,10 +16,10 @@
             <Circle fill="#ff1f1f" layoutX="17.0" layoutY="12.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fill="DODGERBLUE" layoutX="17.0" layoutY="36.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
             <Text fx:id="playerOne" layoutX="33.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1:" />
-            <Text fx:id="PlayerTwo" layoutX="33.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2:" />
+            <Text fx:id="PlayerTwo" layoutX="33.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Computer:" />
             <Text fx:id="playerOnePoints" layoutX="81.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Points" />
-            <Text fx:id="playerTwoPoints" layoutX="81.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Points" />
-             <Text fx:id="computerMoveButton" layoutX="81.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Points" />
+            <Text fx:id="playerTwoPoints" layoutX="91.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Points" />
+             <!--<Text fx:id="computerMoveButton" layoutX="81.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Points" />-->
             <ImageView fx:id="test" fitHeight="50.0" fitWidth="238.0" layoutX="154.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@title.png" />

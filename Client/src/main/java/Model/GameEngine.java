@@ -86,6 +86,9 @@ public class GameEngine {
             currentPlayer.addPoints(attachedBoxes * 10);
             boardController.changeScore(currentPlayer, playerOne, computer);
         }
+        if(currentPlayer == computer){
+            boardController.computerMove();
+        }
 
     }
 

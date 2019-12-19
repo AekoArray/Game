@@ -15,8 +15,10 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class BoardController {
 
@@ -38,8 +40,8 @@ public class BoardController {
     @FXML
     private Text winMessage;
 
-    @FXML
-    public Text computerMoveButton;
+//    @FXML
+//    public Text computerMoveButton;
 
     private GameEngine engine;
 
@@ -55,35 +57,21 @@ public class BoardController {
         menuPane.setLayoutY(positionY + 10); // Make sure that the pain is located under the board items
     }
 
-    public BoardController(){
-
-    }
-
     public void computerMove(){
-                System.out.println("ssss");
+        ArrayList<Line> list = new ArrayList<>();
         for (List<BoardItem> boardItem : engine.getBoardItems()) {
             for (BoardItem item : boardItem) {
                 if (item instanceof Line){
                     Line line = (Line) item;
                     if (!line.getFillStatus()){
-                        lineClicked(line.getLineShape());
-//                        int attachedBoxes = line.howManyAttachedBoxesAreFilledSinceThisTurn();
-//
-//                        if (engine.checkIfAllBoxesAreFilled()) {
-//                            engine.determineWinner();
-//                        }
-//
-//                        if (attachedBoxes <= 0) {
-//                            engine.currentPlayer = engine.changePlayer();
-//                        } else {
-//                            changeBoxColour(line.getAttachedBoxes(), engine.getCurrentPlayer());
-//                            engine.getCurrentPlayer().addPoints(attachedBoxes * 10);
-//                           changeScore(engine.getCurrentPlayer(), engine.getPlayerOne(), engine.getComputer());
-//                        }
-                        return;
+                        list.add((Line) item);
                     }
                 }
             }
+        }
+        if(!list.isEmpty()) {
+            Line rndLine = list.get(new Random().nextInt(list.size()));
+            lineClicked(rndLine.getLineShape());
         }
     }
 

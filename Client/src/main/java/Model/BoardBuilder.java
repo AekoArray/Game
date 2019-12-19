@@ -37,7 +37,7 @@ public class BoardBuilder {
             positionY = determinateWhatPositionYShouldBe(listOfBoardItems, positionY, rowOfBoardItems);
         }
         boardController.setPanePosition(positionY);
-        computer();
+//        computer();
     }
 
 
@@ -94,9 +94,9 @@ public class BoardBuilder {
         board.addItemToBoard(lineShape);
     }
 
-    private void computer(){
-        board.computerMoveButton.setOnMouseClicked(e -> board.computerMove());
-    }
+//    private void computer(){
+//        board.computerMoveButton.setOnMouseClicked(e -> board.computerMove());
+//    }
 
     private float determinateWhatPositionYShouldBe(List<List<BoardItem>> listOfBoardItems, float positionY, List<BoardItem> rowOfBoardItems) {
         if ((listOfBoardItems.indexOf(rowOfBoardItems) & 1) == 0) {
