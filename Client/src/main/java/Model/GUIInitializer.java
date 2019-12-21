@@ -6,23 +6,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.java.Model.GameObjects.BoardItem;
 
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by Paul van der Bles on 9-8-2017.
- */
 public class GUIInitializer {
 
     private GameEngine engine;
     private Stage primaryStage;
     private BoardController boardController;
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
-
 
     public void setRows(int input) {
         engine.setRows(input);
@@ -64,12 +57,12 @@ public class GUIInitializer {
         }
     }
 
-    private void buildBoard(Stage primaryStage) {
-        FXMLLoader loader = instantiateFXMLLoader("Board.fxml");
+    private void buildBoard(final Stage primaryStage) {
+        final FXMLLoader loader = instantiateFXMLLoader("Board.fxml");
         setSceneOnStage(primaryStage, loader);
         setReferences(loader);
         attachSceneToController(primaryStage);
-        List listOfBoardItems = new ItemsBuilder().configureBoardItems(engine);
+        final List<List<BoardItem>> listOfBoardItems = new ItemsBuilder().configureBoardItems(engine);
         new BoardBuilder().drawItemsOnBoard(listOfBoardItems, boardController);
         primaryStage.show();
     }

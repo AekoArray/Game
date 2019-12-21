@@ -1,7 +1,6 @@
 package main.java.Controller;
 
 import main.java.Model.GameEngine;
-import main.java.Model.GameObjects.BoardItem;
 import main.java.Model.GameObjects.Box;
 import main.java.Model.GameObjects.Line;
 import main.java.Model.GameObjects.Player;
@@ -15,7 +14,6 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -58,19 +56,9 @@ public class BoardController {
     }
 
     public void computerMove(){
-        ArrayList<Line> list = new ArrayList<>();
-        for (List<BoardItem> boardItem : engine.getBoardItems()) {
-            for (BoardItem item : boardItem) {
-                if (item instanceof Line){
-                    Line line = (Line) item;
-                    if (!line.getFillStatus()){
-                        list.add((Line) item);
-                    }
-                }
-            }
-        }
-        if(!list.isEmpty()) {
-            Line rndLine = list.get(new Random().nextInt(list.size()));
+        final List<Line> lines = engine.getUnfilledLines();
+        if(!lines.isEmpty()) {
+            Line rndLine = lines.get(new Random().nextInt(lines.size()));
             lineClicked(rndLine.getLineShape());
         }
     }

@@ -14,7 +14,6 @@ public class Main extends Application {
         client.startClient(engine);
     }
 
-
     public static void main(String[] args) {
         launch(args);
     }

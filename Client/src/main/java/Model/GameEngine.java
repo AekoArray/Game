@@ -4,11 +4,9 @@ import main.java.Controller.BoardController;
 import main.java.Model.GameObjects.*;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Paul van der Bles on 9-8-2017.
- */
 public class GameEngine {
     private GUIInitializer guiInitializer;
     private Stage primaryStage;
@@ -19,11 +17,9 @@ public class GameEngine {
     private Player currentPlayer;
     private BoardController boardController;
 
-
-    public List<List<BoardItem>> getBoardItems() {
-        return boardItems;
+    public void setBoardItems(List<List<BoardItem>> boardItems) {
+        this.boardItems = boardItems;
     }
-
 
     public void setBoardController(BoardController boardController) {
         this.boardController = boardController;
@@ -45,10 +41,6 @@ public class GameEngine {
         return board.getColumns();
     }
 
-    public void setBoardItems(List<List<BoardItem>> boardItems) {
-        this.boardItems = boardItems;
-    }
-
     public String getCurrentPlayerColour() {
         return currentPlayer.getColourValue();
     }
@@ -59,6 +51,32 @@ public class GameEngine {
         this.board = new Board();
         initializePlayers();
         startSetup();
+    }
+
+    public void synchronizeLinesWithServer(final List<List<Line>> linesFromServer) {
+        final List<Line> transformedLines = new ArrayList<>();
+        for (List<Line> lines : linesFromServer) {
+            transformedLines.addAll(lines);
+        }
+        final List<Line> localLines = getUnfilledLines();
+        for (int i = 0; i < localLines.size(); i++) {
+            localLines.get(i).setFillStatus(transformedLines.get(i).getFillStatus());
+        }
+    }
+
+    public List<Line> getUnfilledLines() {
+        final List<Line> lines = new ArrayList<>();
+        for (List<BoardItem> boardItem : boardItems) {
+            for (BoardItem item : boardItem) {
+                if (item instanceof Line) {
+                    final Line line = (Line) item;
+                    if (!line.getFillStatus()) {
+                        lines.add((Line) item);
+                    }
+                }
+            }
+        }
+        return lines;
     }
 
     private void initializePlayers() {
@@ -86,10 +104,9 @@ public class GameEngine {
             currentPlayer.addPoints(attachedBoxes * 10);
             boardController.changeScore(currentPlayer, playerOne, computer);
         }
-        if(currentPlayer == computer){
+        if (currentPlayer == computer) {
             boardController.computerMove();
         }
-
     }
 
     private boolean checkIfAllBoxesAreFilled() {
@@ -117,11 +134,9 @@ public class GameEngine {
     private void determineWinner() {
         if (playerOne.getScore() > computer.getScore()) {
             boardController.showWinner(playerOne);
-        }
-        else if (playerOne.getScore() < computer.getScore()) {
+        } else if (playerOne.getScore() < computer.getScore()) {
             boardController.showWinner(computer);
-        }
-        else {
+        } else {
             boardController.showTie();
         }
     }

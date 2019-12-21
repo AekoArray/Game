@@ -10,29 +10,30 @@ import java.util.List;
 
 public class ItemsBuilder {
 
-    List configureBoardItems(GameEngine engine) {
-        List listOfBoardItems = createListOfBoardItems(engine.getColumns(), engine.getRows());
+    List<List<BoardItem>> configureBoardItems(GameEngine engine) {
+        final List<List<BoardItem>> listOfBoardItems = createListOfBoardItems(engine.getColumns(), engine.getRows());
         attachBoxesToLines(listOfBoardItems);
         engine.setBoardItems(listOfBoardItems);
         return listOfBoardItems;
     }
 
-    public List<List<Line>> arrToList(int[][] arr, List<List<Line>> boardItems){
-        for (int i = 0; i < arr.length; i++){
+    public List<List<Line>> transformDataFromServerToList(final int[][] arr) {
+        final List<List<Line>> lines = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
             List<Line> lineList = new ArrayList<>();
-            for(int j = 0; j < arr[i].length; j++){
+            for (int j = 0; j < arr[i].length; j++) {
                 Line line = new Line();
-                if(arr[i][j] == 1){
+                if (arr[i][j] == 1) {
                     line.setFillStatus(true);
                 }
                 lineList.add(line);
             }
-            boardItems.add(lineList);
+            lines.add(lineList);
         }
-        return boardItems;
+        return lines;
     }
 
-    private List createListOfBoardItems(int columns, int rows) { // Makes a list that represents the dots, boxes and lines on the board
+    private List<List<BoardItem>> createListOfBoardItems(int columns, int rows) { // Makes a list that represents the dots, boxes and lines on the board
         List<List<BoardItem>> boardList = new ArrayList<>();
         for (int currentRow = 0; currentRow <= (rows * 2); currentRow++) {
             List<BoardItem> objectsRow = new ArrayList<>();

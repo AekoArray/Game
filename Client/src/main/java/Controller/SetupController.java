@@ -5,12 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-
-/**
- * Created by Paul van der Bles on 9-8-2017.
- */
 public class SetupController {
-
     private GUIInitializer initializer;
 
     @FXML
@@ -23,7 +18,7 @@ public class SetupController {
         this.initializer = initializer;
     }
 
-    public void prepareToSendBoardSizeAfterClick() { // gets input from setup window and checks if values are ok
+    public void prepareToSendBoardSizeAfterClick() {
         String input = getInput();
         if (checkBeforeSendingSize(input)) {
             int convertedInput = convertInputToInt(input);
