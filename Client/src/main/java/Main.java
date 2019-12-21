@@ -10,6 +10,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         GameEngine engine = new GameEngine(new GUIInitializer(), primaryStage);
+        Client client = new Client();
+        client.startClient(engine);
     }
 
 

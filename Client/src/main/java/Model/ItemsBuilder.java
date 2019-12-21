@@ -17,6 +17,21 @@ public class ItemsBuilder {
         return listOfBoardItems;
     }
 
+    public List<List<Line>> arrToList(int[][] arr, List<List<Line>> boardItems){
+        for (int i = 0; i < arr.length; i++){
+            List<Line> lineList = new ArrayList<>();
+            for(int j = 0; j < arr[i].length; j++){
+                Line line = new Line();
+                if(arr[i][j] == 1){
+                    line.setFillStatus(true);
+                }
+                lineList.add(line);
+            }
+            boardItems.add(lineList);
+        }
+        return boardItems;
+    }
+
     private List createListOfBoardItems(int columns, int rows) { // Makes a list that represents the dots, boxes and lines on the board
         List<List<BoardItem>> boardList = new ArrayList<>();
         for (int currentRow = 0; currentRow <= (rows * 2); currentRow++) {
