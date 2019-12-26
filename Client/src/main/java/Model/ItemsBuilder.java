@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ItemsBuilder {
 
-    List<List<BoardItem>> configureBoardItems(GameEngine engine) {
+    public  List<List<BoardItem>> configureBoardItems(GameEngine engine) {
         final List<List<BoardItem>> listOfBoardItems = createListOfBoardItems(engine.getColumns(), engine.getRows());
         attachBoxesToLines(listOfBoardItems);
         engine.setBoardItems(listOfBoardItems);

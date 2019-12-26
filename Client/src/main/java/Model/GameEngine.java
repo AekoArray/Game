@@ -1,5 +1,6 @@
 package main.java.Model;
 
+import main.java.Client;
 import main.java.Controller.BoardController;
 import main.java.Model.GameObjects.*;
 import javafx.stage.Stage;
@@ -58,10 +59,22 @@ public class GameEngine {
         for (List<Line> lines : linesFromServer) {
             transformedLines.addAll(lines);
         }
-        final List<Line> localLines = getUnfilledLines();
+        final List<Line> localLines = getAllLines();
         for (int i = 0; i < localLines.size(); i++) {
-            localLines.get(i).setFillStatus(transformedLines.get(i).getFillStatus());
+            localLines.get(i).setFillStatus(transformedLines.get(i).getFillStatus());//чтобы все линии считывались
         }
+    }
+
+    public List<Line> getAllLines() {
+        final List<Line> lines = new ArrayList<>();
+        for (List<BoardItem> boardItem : boardItems) {
+            for (BoardItem item : boardItem) {
+                if (item instanceof Line) {
+                    lines.add((Line) item);
+                }
+            }
+            }
+            return lines;
     }
 
     public List<Line> getUnfilledLines() {

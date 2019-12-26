@@ -54,6 +54,7 @@ public class GUIInitializer {
     public void checkIfBoardIsReady() {
         if (isRowsSet() && isColumnsSet()) {
             buildBoard(primaryStage);
+
         }
     }
 

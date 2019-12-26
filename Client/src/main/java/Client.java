@@ -19,7 +19,7 @@ public class Client {
             gameEngine.synchronizeLinesWithServer(lines);
             s.close();
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e + " problem with socket");
         }
     }
 }

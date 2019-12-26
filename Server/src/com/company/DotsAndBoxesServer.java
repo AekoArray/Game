@@ -21,6 +21,8 @@ public class DotsAndBoxesServer {
 
             };
             out.writeObject(arr);
+            out.flush();
+            out.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -13,7 +13,7 @@ import org.mockito.Mockito;
 import java.util.Collections;
 import java.util.List;
 
-public class LineTest {
+public class GameEngineTest {
 
     @Test
     public void fillStatusIsFill(){
